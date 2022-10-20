@@ -6,9 +6,9 @@ import (
 )
 
 const (
-	InappropriateMessageForBot = "Becoming botanist really needs strong interest and passion. You need to whip these." +
+	InappropriateMessageForBot = "Becoming a botanist really needs strong interest and passion. You need to whip these." +
 		"Don't lose your hope."
-	AppropriateMessageForBot = "You are ideal candidate, however you need to work hard to be Botanist."
+	AppropriateMessageForBot = "You are an ideal candidate. However, you need to work hard to be Botanist."
 )
 
 type Botanist struct{}

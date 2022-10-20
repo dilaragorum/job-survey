@@ -6,8 +6,8 @@ import (
 )
 
 const (
-	InappropriateMessageForSoftDev = "Sorry, You need to change your mindset. Don't lose your hope."
-	AppropriateMessageForSoftDev   = "You are ideal candidate, however you need to work hard to be Software Developer"
+	InappropriateMessageForSoftDev = "Sorry, You need to change your mindset. But don't lose your hope."
+	AppropriateMessageForSoftDev   = "You are an ideal candidate. However, you need to work hard to be a Software Developer"
 )
 
 type SoftwareDeveloper struct{}

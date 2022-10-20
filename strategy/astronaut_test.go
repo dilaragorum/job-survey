@@ -7,11 +7,13 @@ import (
 	"testing"
 )
 
-//go build -o calculate    ./calculate
-// TODO: ascinema çekilecek
-// TODO: goreleaser: https://www.youtube.com/watch?v=GG8m-aJuptk
-// 		  https://github.com/Abdulsametileri/vX
+// go build -o calculate    ./calculate
 
+// TODO: goreleaser: https://www.youtube.com/watch?v=GG8m-aJuptk
+//
+//	https://github.com/Abdulsametileri/vX
+//
+// asciinema rec -- exit
 func TestAstronaut_Check(t *testing.T) {
 	t.Run("Appropriate_Answers", func(t *testing.T) {
 		// Given

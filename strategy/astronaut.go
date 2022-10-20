@@ -6,8 +6,8 @@ import (
 )
 
 const (
-	InappropriateMsgTextAst = "Sorry, There are really strict rules to be selected. Better to prefer another job."
-	AppropriateMsgTextAst   = "You meet the pre-conditions. If you selected, you need to work hard :)"
+	InappropriateMsgTextAst = "Sorry, There are stringent rules to be selected. Better to prefer another job."
+	AppropriateMsgTextAst   = "You meet the pre-conditions. If you are selected, you need to work hard. :)"
 )
 
 type Astronaut struct {
