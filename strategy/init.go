@@ -14,8 +14,13 @@ func JobRegister() {
 	Job.Register(questionary.JobSoftwareDeveloper, &SoftwareDeveloper{})
 }
 
+type CheckResult struct {
+	Text   string
+	Status bool
+}
+
 type JobChecker interface {
-	Check(answersBytes []byte) (questionary.MessageForClient, error)
+	Check(answersBytes []byte) (CheckResult, error)
 }
 
 type StrategyMap map[string]JobChecker
@@ -24,6 +29,6 @@ func (m StrategyMap) Register(key string, value JobChecker) {
 	Job[key] = value
 }
 
-func (m StrategyMap) Check(desiredJob string, answersBytes []byte) (questionary.MessageForClient, error) {
+func (m StrategyMap) Check(desiredJob string, answersBytes []byte) (CheckResult, error) {
 	return Job[desiredJob].Check(answersBytes)
 }

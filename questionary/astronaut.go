@@ -6,21 +6,21 @@ import (
 )
 
 const (
-	BiologicalScience = "Biological Science"
-	ComputerScience   = "Computer Science"
-	Engineering       = "Engineering"
-	Mathematics       = "Mathematics"
-	SocialScience     = "Social Science"
-	Other             = "Other"
+	BiologicalScienceDegree = "Biological Science"
+	ComputerScienceDegree   = "Computer Science"
+	EngineeringDegree       = "Engineering"
+	MathematicsDegree       = "Mathematics"
+	SocialScienceDegree     = "Social Science"
+	OtherDegrees            = "Other"
 )
 
 var Departments = []string{
-	BiologicalScience,
-	ComputerScience,
-	Engineering,
-	Mathematics,
-	SocialScience,
-	Other,
+	BiologicalScienceDegree,
+	ComputerScienceDegree,
+	EngineeringDegree,
+	MathematicsDegree,
+	SocialScienceDegree,
+	OtherDegrees,
 }
 
 const (
@@ -41,6 +41,12 @@ type AstAnswer struct {
 	BachelorDegree Select
 	MasterDegree   Select
 }
+
+// TODO:
+const (
+	MinRestrictionHeight = 149
+	MaxRestrictionHeight = 193
+)
 
 var AstronautQuestions = []*survey.Question{
 	{

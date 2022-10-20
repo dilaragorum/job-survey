@@ -13,16 +13,16 @@ const (
 
 type Botanist struct{}
 
-func (bot *Botanist) Check(answersBytes []byte) (questionary.MessageForClient, error) {
+func (bot *Botanist) Check(answersBytes []byte) (CheckResult, error) {
 	var answers questionary.BotAnswer
 	err := json.Unmarshal(answersBytes, &answers)
 	if err != nil {
-		return questionary.MessageForClient{}, err
+		return CheckResult{}, err
 	}
 
 	if answers.LocalFlora && answers.NewPlantSpecies && answers.LabExercise && answers.Passion {
-		return questionary.MessageForClient{AppropriateMessageForBot, true}, nil
+		return CheckResult{Text: AppropriateMessageForBot, Status: true}, nil
 	}
 
-	return questionary.MessageForClient{Text: InappropriateMessageForBot, Status: false}, nil
+	return CheckResult{Text: InappropriateMessageForBot, Status: false}, nil
 }

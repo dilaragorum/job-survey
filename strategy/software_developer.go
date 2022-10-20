@@ -12,15 +12,15 @@ const (
 
 type SoftwareDeveloper struct{}
 
-func (sci *SoftwareDeveloper) Check(answersBytes []byte) (questionary.MessageForClient, error) {
+func (sci *SoftwareDeveloper) Check(answersBytes []byte) (CheckResult, error) {
 	var answers questionary.SDAnswer
 	if err := json.Unmarshal(answersBytes, &answers); err != nil {
-		return questionary.MessageForClient{}, err
+		return CheckResult{}, err
 	}
 
 	if answers.SelfLearning && answers.Collaboration {
-		return questionary.MessageForClient{Text: AppropriateMessageForSoftDev, Status: true}, nil
+		return CheckResult{Text: AppropriateMessageForSoftDev, Status: true}, nil
 	}
 
-	return questionary.MessageForClient{Text: InappropriateMessageForSoftDev, Status: false}, nil
+	return CheckResult{Text: InappropriateMessageForSoftDev, Status: false}, nil
 }

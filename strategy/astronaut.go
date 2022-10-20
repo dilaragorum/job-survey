@@ -7,7 +7,7 @@ import (
 
 const (
 	InappropriateMsgTextAst = "Sorry, There are really strict rules to be selected. Better to prefer another job."
-	AppropriateMsgTextAst   = "You meet the pre-conditions. If you selected, you need to work hard :)"
+	AppropriateMsgTextAst   = "You have met the pre-conditions. If you selected, you need to work hard :)"
 )
 
 type Astronaut struct {
@@ -16,34 +16,34 @@ type Astronaut struct {
 
 func NewAstronaut() *Astronaut {
 	return &Astronaut{validDegree: map[string]bool{
-		questionary.BiologicalScience: true,
-		questionary.ComputerScience:   true,
-		questionary.Engineering:       true,
-		questionary.Mathematics:       true,
+		questionary.BiologicalScienceDegree: true,
+		questionary.ComputerScienceDegree:   true,
+		questionary.EngineeringDegree:       true,
+		questionary.MathematicsDegree:       true,
 	}}
 }
 
-func (ast *Astronaut) Check(answersBytes []byte) (questionary.MessageForClient, error) {
+func (ast *Astronaut) Check(answersBytes []byte) (CheckResult, error) {
 	var answers questionary.AstAnswer
 	err := json.Unmarshal(answersBytes, &answers)
 	if err != nil {
-		return questionary.MessageForClient{}, err
+		return CheckResult{}, err
 	}
 
 	if ok := ast.validDegree[answers.BachelorDegree.Value.(string)]; !ok {
-		return questionary.MessageForClient{Text: InappropriateMsgTextAst, Status: false}, nil
+		return CheckResult{Text: InappropriateMsgTextAst, Status: false}, nil
 	}
 
 	if ok := ast.validDegree[answers.MasterDegree.Value.(string)]; !ok {
-		return questionary.MessageForClient{Text: InappropriateMsgTextAst, Status: false}, nil
+		return CheckResult{Text: InappropriateMsgTextAst, Status: false}, nil
 	}
 
 	eyeSightVal := answers.EyeSight.Value
 
 	if (eyeSightVal == questionary.NoEyeSightProblem || eyeSightVal == questionary.CurableEyeSightProblem) &&
-		(answers.Tall > 149 && answers.Tall < 193) {
-		return questionary.MessageForClient{Text: AppropriateMsgTextAst, Status: true}, nil
+		(answers.Tall > questionary.MinRestrictionHeight && answers.Tall < questionary.MaxRestrictionHeight) {
+		return CheckResult{Text: AppropriateMsgTextAst, Status: true}, nil
 	}
 
-	return questionary.MessageForClient{Text: InappropriateMsgTextAst, Status: false}, nil
+	return CheckResult{Text: InappropriateMsgTextAst, Status: false}, nil
 }

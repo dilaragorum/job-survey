@@ -7,11 +7,6 @@ import (
 	"testing"
 )
 
-//go build -o calculate    ./calculate
-// TODO: ascinema çekilecek
-// TODO: goreleaser: https://www.youtube.com/watch?v=GG8m-aJuptk
-// 		  https://github.com/Abdulsametileri/vX
-
 func TestAstronaut_Check(t *testing.T) {
 	t.Run("Appropriate_Answers", func(t *testing.T) {
 		// Given
@@ -24,11 +19,11 @@ func TestAstronaut_Check(t *testing.T) {
 			},
 			BachelorDegree: questionary.Select{
 				Index: 0,
-				Value: questionary.BiologicalScience,
+				Value: questionary.BiologicalScienceDegree,
 			},
 			MasterDegree: questionary.Select{
 				Index: 0,
-				Value: questionary.BiologicalScience,
+				Value: questionary.BiologicalScienceDegree,
 			},
 		}
 
@@ -36,7 +31,7 @@ func TestAstronaut_Check(t *testing.T) {
 
 		// When
 		check, _ := astronaut.Check(byteAnswer)
-		expectedText := "You meet the pre-conditions. If you selected, you need to work hard :)"
+		expectedText := "You have met the pre-conditions. If you selected, you need to work hard :)"
 		// Then
 		assert.Equal(t, expectedText, check.Text)
 		assert.True(t, check.Status)
@@ -52,11 +47,11 @@ func TestAstronaut_Check(t *testing.T) {
 			},
 			BachelorDegree: questionary.Select{
 				Index: 0,
-				Value: questionary.BiologicalScience,
+				Value: questionary.BiologicalScienceDegree,
 			},
 			MasterDegree: questionary.Select{
 				Index: 0,
-				Value: questionary.BiologicalScience,
+				Value: questionary.BiologicalScienceDegree,
 			},
 		}
 
@@ -81,11 +76,11 @@ func TestAstronaut_Check(t *testing.T) {
 			},
 			BachelorDegree: questionary.Select{
 				Index: 0,
-				Value: questionary.SocialScience,
+				Value: questionary.SocialScienceDegree,
 			},
 			MasterDegree: questionary.Select{
 				Index: 0,
-				Value: questionary.BiologicalScience,
+				Value: questionary.BiologicalScienceDegree,
 			},
 		}
 
@@ -110,11 +105,11 @@ func TestAstronaut_Check(t *testing.T) {
 			},
 			BachelorDegree: questionary.Select{
 				Index: 0,
-				Value: questionary.BiologicalScience,
+				Value: questionary.BiologicalScienceDegree,
 			},
 			MasterDegree: questionary.Select{
 				Index: 0,
-				Value: questionary.Other,
+				Value: questionary.OtherDegrees,
 			},
 		}
 
@@ -139,11 +134,11 @@ func TestAstronaut_Check(t *testing.T) {
 			},
 			BachelorDegree: questionary.Select{
 				Index: 0,
-				Value: questionary.BiologicalScience,
+				Value: questionary.BiologicalScienceDegree,
 			},
 			MasterDegree: questionary.Select{
 				Index: 0,
-				Value: questionary.Other,
+				Value: questionary.OtherDegrees,
 			},
 		}
 
