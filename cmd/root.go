@@ -7,9 +7,9 @@ import (
 	"github.com/spf13/cobra"
 	"log"
 
-	"github.com/dilaragorum/occupation-app/questionary"
+	"github.com/dilaragorum/job-survey/questionary"
 
-	"github.com/dilaragorum/occupation-app/strategy"
+	"github.com/dilaragorum/job-survey/strategy"
 )
 
 var rootCmd = &cobra.Command{
