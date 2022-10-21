@@ -16,7 +16,7 @@ var JobOptions = []string{
 }
 
 var JobQuestionsMap = map[string][]*survey.Question{
-	JobAskQuestion:       BeginningQuestion,
+	JobAskQuestion:       DesiredJobQuestion,
 	JobAstronaut:         AstronautQuestions,
 	JobBotanist:          BotanistQuestions,
 	JobSoftwareDeveloper: SoftwareDeveloperQuestions,

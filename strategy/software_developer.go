@@ -6,7 +6,7 @@ import (
 )
 
 const (
-	SoftwareDeveloperInappropriateMessage = "Sorry, You need to change your mindset. Don't lose your hope."
+	SoftwareDeveloperInappropriateMessage = "You need to change your mindset. Don't lose your hope. Try and try again."
 	SoftwareDeveloperAppropriateMessage   = "You are ideal candidate, however you need to work hard to be Software Developer"
 )
 

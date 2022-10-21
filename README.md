@@ -1,6 +1,6 @@
 # Job Survey
 
-This is a very basic CLI tool which allows you to see whether you are suitable for selected job
+This is a very basic CLI tool which allows you to see whether you are suitable for selected job.
 
 
 ## Demo

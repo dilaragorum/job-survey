@@ -2,11 +2,11 @@ package questionary
 
 import "github.com/AlecAivazis/survey/v2"
 
-type BeginAnswer struct {
+type DesiredJobAnswer struct {
 	Job string
 }
 
-var BeginningQuestion = []*survey.Question{
+var DesiredJobQuestion = []*survey.Question{
 	{
 		Name: "Job",
 		Prompt: &survey.Select{

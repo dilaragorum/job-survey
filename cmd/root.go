@@ -16,18 +16,18 @@ var rootCmd = &cobra.Command{
 	Short:   "This allows you to see whether you are suitable for selected job",
 	Example: "job-survey",
 	RunE: func(cmd *cobra.Command, args []string) error {
-		var beginningAnswers questionary.BeginAnswer
-		err := survey.Ask(questionary.JobQuestionsMap[questionary.JobAskQuestion], &beginningAnswers)
+		var desired questionary.DesiredJobAnswer
+		err := survey.Ask(questionary.JobQuestionsMap[questionary.JobAskQuestion], &desired)
 		if err != nil {
 			return err
 		}
 
-		answersBytes, err := askQuestions(beginningAnswers.Job)
+		answersBytes, err := askQuestions(desired.Job)
 		if err != nil {
 			return err
 		}
 
-		message, err := strategy.Job.Check(beginningAnswers.Job, answersBytes)
+		message, err := strategy.Job.Check(desired.Job, answersBytes)
 		if err != nil {
 			return err
 		}
