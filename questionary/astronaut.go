@@ -24,19 +24,18 @@ var Departments = []string{
 }
 
 const (
-	IncurableEyeSightProblem = "Yes, I have incurable eyesight problem"
-	CurableEyeSightProblem   = "Yes, I have eyesight problem but it is curable"
-	NoEyeSightProblem        = "No, I have no eyesight problem"
+	AstronautIncurableEyeSightProblem = "Yes, I have incurable eyesight problem"
+	AstronautCurableEyeSightProblem   = "Yes, I have eyesight problem but it is curable"
+	AstronautNoEyeSightProblem        = "No, I have no eyesight problem"
 )
 
-// TODO: Ast ekle
 var EyeSightOptions = []string{
-	IncurableEyeSightProblem,
-	CurableEyeSightProblem,
-	NoEyeSightProblem,
+	AstronautIncurableEyeSightProblem,
+	AstronautCurableEyeSightProblem,
+	AstronautNoEyeSightProblem,
 }
 
-type AstAnswer struct {
+type AstronautAnswer struct {
 	Tall           int
 	EyeSight       Select
 	BachelorDegree Select

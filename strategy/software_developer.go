@@ -6,8 +6,8 @@ import (
 )
 
 const (
-	InappropriateMessageForSoftDev = "Sorry, You need to change your mindset. Don't lose your hope."
-	AppropriateMessageForSoftDev   = "You are ideal candidate, however you need to work hard to be Software Developer"
+	SoftwareDeveloperInappropriateMessage = "Sorry, You need to change your mindset. Don't lose your hope."
+	SoftwareDeveloperAppropriateMessage   = "You are ideal candidate, however you need to work hard to be Software Developer"
 )
 
 type SoftwareDeveloper struct{}
@@ -19,8 +19,8 @@ func (sci *SoftwareDeveloper) Check(answersBytes []byte) (CheckResult, error) {
 	}
 
 	if answers.SelfLearning && answers.Collaboration {
-		return CheckResult{Text: AppropriateMessageForSoftDev, Status: true}, nil
+		return CheckResult{Text: SoftwareDeveloperAppropriateMessage, Status: true}, nil
 	}
 
-	return CheckResult{Text: InappropriateMessageForSoftDev, Status: false}, nil
+	return CheckResult{Text: SoftwareDeveloperInappropriateMessage, Status: false}, nil
 }

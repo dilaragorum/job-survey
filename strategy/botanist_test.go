@@ -12,7 +12,7 @@ func TestBotanist_Check(t *testing.T) {
 		// Given
 		botanist := Botanist{}
 
-		answer := questionary.BotAnswer{
+		answer := questionary.BotanistAnswer{
 			LocalFlora:      true,
 			LabExercise:     true,
 			NewPlantSpecies: true,
@@ -34,7 +34,7 @@ func TestBotanist_Check(t *testing.T) {
 		// Given
 		botanist := Botanist{}
 
-		answer := questionary.BotAnswer{
+		answer := questionary.BotanistAnswer{
 			LocalFlora:      false,
 			LabExercise:     true,
 			NewPlantSpecies: true,
@@ -57,7 +57,7 @@ func TestBotanist_Check(t *testing.T) {
 		// Given
 		botanist := Botanist{}
 
-		answer := questionary.BotAnswer{
+		answer := questionary.BotanistAnswer{
 			LocalFlora:      true,
 			LabExercise:     false,
 			NewPlantSpecies: true,
@@ -80,7 +80,7 @@ func TestBotanist_Check(t *testing.T) {
 		// Given
 		botanist := Botanist{}
 
-		answer := questionary.BotAnswer{
+		answer := questionary.BotanistAnswer{
 			LocalFlora:      true,
 			LabExercise:     true,
 			NewPlantSpecies: false,
@@ -103,7 +103,7 @@ func TestBotanist_Check(t *testing.T) {
 		// Given
 		botanist := Botanist{}
 
-		answer := questionary.BotAnswer{
+		answer := questionary.BotanistAnswer{
 			LocalFlora:      true,
 			LabExercise:     true,
 			NewPlantSpecies: true,
@@ -126,7 +126,7 @@ func TestBotanist_Check(t *testing.T) {
 		// Given
 		botanist := Botanist{}
 
-		answer := questionary.BotAnswer{
+		answer := questionary.BotanistAnswer{
 			LocalFlora:      false,
 			LabExercise:     true,
 			NewPlantSpecies: true,
@@ -149,7 +149,7 @@ func TestBotanist_Check(t *testing.T) {
 		// Given
 		botanist := Botanist{}
 
-		answer := questionary.BotAnswer{
+		answer := questionary.BotanistAnswer{
 			LocalFlora:      false,
 			LabExercise:     true,
 			NewPlantSpecies: false,
@@ -172,7 +172,7 @@ func TestBotanist_Check(t *testing.T) {
 		// Given
 		botanist := Botanist{}
 
-		answer := questionary.BotAnswer{
+		answer := questionary.BotanistAnswer{
 			LocalFlora:      false,
 			LabExercise:     false,
 			NewPlantSpecies: false,

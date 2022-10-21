@@ -11,11 +11,11 @@ func TestAstronaut_Check(t *testing.T) {
 	t.Run("Appropriate_Answers", func(t *testing.T) {
 		// Given
 		astronaut := NewAstronaut()
-		answer := questionary.AstAnswer{
+		answer := questionary.AstronautAnswer{
 			Tall: 165,
 			EyeSight: questionary.Select{
 				Index: 2,
-				Value: questionary.NoEyeSightProblem,
+				Value: questionary.AstronautNoEyeSightProblem,
 			},
 			BachelorDegree: questionary.Select{
 				Index: 0,
@@ -39,11 +39,11 @@ func TestAstronaut_Check(t *testing.T) {
 	t.Run("When_Tall_Is_Not_Appropriate", func(t *testing.T) {
 		// Given
 		astronaut := NewAstronaut()
-		answer := questionary.AstAnswer{
+		answer := questionary.AstronautAnswer{
 			Tall: 120,
 			EyeSight: questionary.Select{
 				Index: 0,
-				Value: questionary.NoEyeSightProblem,
+				Value: questionary.AstronautNoEyeSightProblem,
 			},
 			BachelorDegree: questionary.Select{
 				Index: 0,
@@ -68,11 +68,11 @@ func TestAstronaut_Check(t *testing.T) {
 	t.Run("When_Bachelor_Is_Not_Appropriate", func(t *testing.T) {
 		// Given
 		astronaut := NewAstronaut()
-		answer := questionary.AstAnswer{
+		answer := questionary.AstronautAnswer{
 			Tall: 120,
 			EyeSight: questionary.Select{
 				Index: 0,
-				Value: questionary.CurableEyeSightProblem,
+				Value: questionary.AstronautCurableEyeSightProblem,
 			},
 			BachelorDegree: questionary.Select{
 				Index: 0,
@@ -97,11 +97,11 @@ func TestAstronaut_Check(t *testing.T) {
 	t.Run("When_Master_Is_Not_Appropriate", func(t *testing.T) {
 		// Given
 		astronaut := NewAstronaut()
-		answer := questionary.AstAnswer{
+		answer := questionary.AstronautAnswer{
 			Tall: 120,
 			EyeSight: questionary.Select{
 				Index: 0,
-				Value: questionary.CurableEyeSightProblem,
+				Value: questionary.AstronautCurableEyeSightProblem,
 			},
 			BachelorDegree: questionary.Select{
 				Index: 0,
@@ -126,11 +126,11 @@ func TestAstronaut_Check(t *testing.T) {
 	t.Run("When_Have_Incurable_Eyesight_Problem", func(t *testing.T) {
 		// Given
 		astronaut := NewAstronaut()
-		answer := questionary.AstAnswer{
+		answer := questionary.AstronautAnswer{
 			Tall: 165,
 			EyeSight: questionary.Select{
 				Index: 0,
-				Value: questionary.IncurableEyeSightProblem,
+				Value: questionary.AstronautIncurableEyeSightProblem,
 			},
 			BachelorDegree: questionary.Select{
 				Index: 0,

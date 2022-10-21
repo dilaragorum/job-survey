@@ -2,7 +2,7 @@ package questionary
 
 import "github.com/AlecAivazis/survey/v2"
 
-type BotAnswer struct {
+type BotanistAnswer struct {
 	LocalFlora      bool
 	LabExercise     bool
 	NewPlantSpecies bool
