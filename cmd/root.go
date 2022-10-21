@@ -13,7 +13,7 @@ import (
 
 var rootCmd = &cobra.Command{
 	Use:     "job-survey",
-	Short:   "This allows you to decide whether you are suitable for selected job",
+	Short:   "This allows you to see whether you are suitable for selected job",
 	Example: "job-survey",
 	RunE: func(cmd *cobra.Command, args []string) error {
 		var beginningAnswers questionary.BeginAnswer
