@@ -1,13 +1,13 @@
 .PHONY: unit-test
 unit-test:
-	go test -v ./... -coverprofile=unit_coverage.out
+	go test -v ./...
 
 .PHONY: build
 build:
 	go build -o job-survey
 
 .PHONY: goreleaser-local
-releaser-local:
+goreleaser-local:
 	goreleaser release --snapshot --rm-dist
 
 .PHONY: goreleaser-remote

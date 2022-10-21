@@ -41,7 +41,7 @@ func (ast *Astronaut) Check(answersBytes []byte) (CheckResult, error) {
 	eyeSightVal := answers.EyeSight.Value
 
 	if (eyeSightVal == questionary.NoEyeSightProblem || eyeSightVal == questionary.CurableEyeSightProblem) &&
-		(answers.Tall > questionary.MinRestrictionHeight && answers.Tall < questionary.MaxRestrictionHeight) {
+		(answers.Tall > questionary.AstronautMinRestrictionHeight && answers.Tall < questionary.AstronautMaxRestrictionHeight) {
 		return CheckResult{Text: AppropriateMsgTextAst, Status: true}, nil
 	}
 

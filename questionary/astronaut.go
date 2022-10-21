@@ -29,6 +29,7 @@ const (
 	NoEyeSightProblem        = "No, I have no eyesight problem"
 )
 
+// TODO: Ast ekle
 var EyeSightOptions = []string{
 	IncurableEyeSightProblem,
 	CurableEyeSightProblem,
@@ -42,10 +43,9 @@ type AstAnswer struct {
 	MasterDegree   Select
 }
 
-// TODO:
 const (
-	MinRestrictionHeight = 149
-	MaxRestrictionHeight = 193
+	AstronautMinRestrictionHeight = 149
+	AstronautMaxRestrictionHeight = 193
 )
 
 var AstronautQuestions = []*survey.Question{

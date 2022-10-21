@@ -32,8 +32,7 @@ var rootCmd = &cobra.Command{
 			return err
 		}
 
-		// TODO: burayı ayrı bir metoda alabiliriz.
-		checkStatus(message)
+		surveyResult(message)
 
 		return nil
 	},
@@ -45,7 +44,7 @@ func Execute() {
 	}
 }
 
-func checkStatus(result strategy.CheckResult) {
+func surveyResult(result strategy.CheckResult) {
 	if result.Status {
 		color.Green("%s", result.Text)
 		return
