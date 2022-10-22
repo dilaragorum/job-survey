@@ -14,6 +14,7 @@ import (
 var rootCmd = &cobra.Command{
 	Use:     "job-survey",
 	Short:   "This allows you to see whether you are suitable for selected job",
+	Aliases: []string{"js"},
 	Example: "job-survey",
 	RunE: func(cmd *cobra.Command, args []string) error {
 		job, err := startQuestion()
