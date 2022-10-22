@@ -16,18 +16,19 @@ var rootCmd = &cobra.Command{
 	Short:   "This allows you to see whether you are suitable for selected job",
 	Example: "job-survey",
 	RunE: func(cmd *cobra.Command, args []string) error {
-		var desired questionary.DesiredJobAnswer
-		err := survey.Ask(questionary.JobQuestionsMap[questionary.JobAskQuestion], &desired)
+		job, err := startQuestion()
 		if err != nil {
 			return err
 		}
 
-		answersBytes, err := askQuestions(desired.Job)
+		questions := strategy.Job.GetQuestions(job)
+
+		answersBytes, err := askQuestions(questions)
 		if err != nil {
 			return err
 		}
 
-		message, err := strategy.Job.Check(desired.Job, answersBytes)
+		message, err := strategy.Job.Check(job, answersBytes)
 		if err != nil {
 			return err
 		}
@@ -38,10 +39,21 @@ var rootCmd = &cobra.Command{
 	},
 }
 
-func Execute() {
-	if err := rootCmd.Execute(); err != nil {
-		log.Fatalf("Failed to execute command. Reason: %v", err)
+func startQuestion() (string, error) {
+	var job string
+	err := survey.AskOne(questionary.DesiredJobQuestion, &job)
+	return job, err
+}
+
+func askQuestions(questions []*survey.Question) ([]byte, error) {
+	answers := make(map[string]interface{})
+	if err := survey.Ask(questions, &answers); err != nil {
+		return nil, err
 	}
+
+	// trick: in order to provide dynamism
+	answersBytes, _ := json.Marshal(answers)
+	return answersBytes, nil
 }
 
 func surveyResult(result strategy.CheckResult) {
@@ -53,14 +65,8 @@ func surveyResult(result strategy.CheckResult) {
 	color.Red("%s", result.Text)
 }
 
-func askQuestions(desiredJob string) ([]byte, error) {
-	qs := questionary.JobQuestionsMap[desiredJob]
-
-	answers := make(map[string]interface{})
-	if err := survey.Ask(qs, &answers); err != nil {
-		return nil, err
+func Execute() {
+	if err := rootCmd.Execute(); err != nil {
+		log.Fatalf("Failed to execute command. Reason: %v", err)
 	}
-
-	answersBytes, _ := json.Marshal(answers)
-	return answersBytes, nil
 }

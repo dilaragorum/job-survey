@@ -42,6 +42,13 @@ type AstronautAnswer struct {
 	MasterDegree   Select
 }
 
+var AstronautValidDegree = map[string]bool{
+	BiologicalScienceDegree: true,
+	ComputerScienceDegree:   true,
+	EngineeringDegree:       true,
+	MathematicsDegree:       true,
+}
+
 const (
 	AstronautMinRestrictionHeight = 149
 	AstronautMaxRestrictionHeight = 193

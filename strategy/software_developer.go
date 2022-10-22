@@ -2,6 +2,7 @@ package strategy
 
 import (
 	"encoding/json"
+	"github.com/AlecAivazis/survey/v2"
 	"github.com/dilaragorum/job-survey/questionary"
 )
 
@@ -23,4 +24,8 @@ func (sci *SoftwareDeveloper) Check(answersBytes []byte) (CheckResult, error) {
 	}
 
 	return CheckResult{Text: SoftwareDeveloperInappropriateMessage, Status: false}, nil
+}
+
+func (sci *SoftwareDeveloper) GetQuestions() []*survey.Question {
+	return questionary.SoftwareDeveloperQuestions
 }

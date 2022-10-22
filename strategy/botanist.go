@@ -2,6 +2,7 @@ package strategy
 
 import (
 	"encoding/json"
+	"github.com/AlecAivazis/survey/v2"
 	"github.com/dilaragorum/job-survey/questionary"
 )
 
@@ -25,4 +26,8 @@ func (bot *Botanist) Check(answersBytes []byte) (CheckResult, error) {
 	}
 
 	return CheckResult{Text: BotanistInappropriateMessage, Status: false}, nil
+}
+
+func (bot *Botanist) GetQuestions() []*survey.Question {
+	return questionary.BotanistQuestions
 }

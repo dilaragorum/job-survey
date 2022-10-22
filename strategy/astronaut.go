@@ -2,6 +2,7 @@ package strategy
 
 import (
 	"encoding/json"
+	"github.com/AlecAivazis/survey/v2"
 	"github.com/dilaragorum/job-survey/questionary"
 )
 
@@ -11,16 +12,6 @@ const (
 )
 
 type Astronaut struct {
-	validDegree map[string]bool
-}
-
-func NewAstronaut() *Astronaut {
-	return &Astronaut{validDegree: map[string]bool{
-		questionary.BiologicalScienceDegree: true,
-		questionary.ComputerScienceDegree:   true,
-		questionary.EngineeringDegree:       true,
-		questionary.MathematicsDegree:       true,
-	}}
 }
 
 func (ast *Astronaut) Check(answersBytes []byte) (CheckResult, error) {
@@ -30,11 +21,11 @@ func (ast *Astronaut) Check(answersBytes []byte) (CheckResult, error) {
 		return CheckResult{}, err
 	}
 
-	if ok := ast.validDegree[answers.BachelorDegree.Value.(string)]; !ok {
+	if ok := questionary.AstronautValidDegree[answers.BachelorDegree.Value.(string)]; !ok {
 		return CheckResult{Text: AstronautInappropriateMsgText, Status: false}, nil
 	}
 
-	if ok := ast.validDegree[answers.MasterDegree.Value.(string)]; !ok {
+	if ok := questionary.AstronautValidDegree[answers.MasterDegree.Value.(string)]; !ok {
 		return CheckResult{Text: AstronautInappropriateMsgText, Status: false}, nil
 	}
 
@@ -46,4 +37,8 @@ func (ast *Astronaut) Check(answersBytes []byte) (CheckResult, error) {
 	}
 
 	return CheckResult{Text: AstronautInappropriateMsgText, Status: false}, nil
+}
+
+func (ast *Astronaut) GetQuestions() []*survey.Question {
+	return questionary.AstronautQuestions
 }

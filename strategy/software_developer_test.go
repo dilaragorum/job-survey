@@ -41,7 +41,7 @@ func TestSoftwareDeveloper_Check(t *testing.T) {
 
 		// When
 		check, _ := developer.Check(answerBytes)
-		expectedText := "Sorry, You need to change your mindset. Don't lose your hope."
+		expectedText := "You need to change your mindset. Don't lose your hope. Try and try again."
 
 		// Then
 		assert.Equal(t, expectedText, check.Text)
@@ -61,7 +61,7 @@ func TestSoftwareDeveloper_Check(t *testing.T) {
 
 		// When
 		check, _ := developer.Check(answerBytes)
-		expectedText := "Sorry, You need to change your mindset. Don't lose your hope."
+		expectedText := "You need to change your mindset. Don't lose your hope. Try and try again."
 
 		// Then
 		assert.Equal(t, expectedText, check.Text)
@@ -81,7 +81,7 @@ func TestSoftwareDeveloper_Check(t *testing.T) {
 
 		// When
 		check, _ := developer.Check(answerBytes)
-		expectedText := "Sorry, You need to change your mindset. Don't lose your hope."
+		expectedText := "You need to change your mindset. Don't lose your hope. Try and try again."
 
 		// Then
 		assert.Equal(t, expectedText, check.Text)

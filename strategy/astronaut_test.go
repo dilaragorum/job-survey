@@ -10,7 +10,7 @@ import (
 func TestAstronaut_Check(t *testing.T) {
 	t.Run("Appropriate_Answers", func(t *testing.T) {
 		// Given
-		astronaut := NewAstronaut()
+		astronaut := Astronaut{}
 		answer := questionary.AstronautAnswer{
 			Tall: 165,
 			EyeSight: questionary.Select{
@@ -38,7 +38,7 @@ func TestAstronaut_Check(t *testing.T) {
 	})
 	t.Run("When_Tall_Is_Not_Appropriate", func(t *testing.T) {
 		// Given
-		astronaut := NewAstronaut()
+		astronaut := Astronaut{}
 		answer := questionary.AstronautAnswer{
 			Tall: 120,
 			EyeSight: questionary.Select{
@@ -67,7 +67,7 @@ func TestAstronaut_Check(t *testing.T) {
 	})
 	t.Run("When_Bachelor_Is_Not_Appropriate", func(t *testing.T) {
 		// Given
-		astronaut := NewAstronaut()
+		astronaut := Astronaut{}
 		answer := questionary.AstronautAnswer{
 			Tall: 120,
 			EyeSight: questionary.Select{
@@ -96,7 +96,7 @@ func TestAstronaut_Check(t *testing.T) {
 	})
 	t.Run("When_Master_Is_Not_Appropriate", func(t *testing.T) {
 		// Given
-		astronaut := NewAstronaut()
+		astronaut := Astronaut{}
 		answer := questionary.AstronautAnswer{
 			Tall: 120,
 			EyeSight: questionary.Select{
@@ -125,7 +125,7 @@ func TestAstronaut_Check(t *testing.T) {
 	})
 	t.Run("When_Have_Incurable_Eyesight_Problem", func(t *testing.T) {
 		// Given
-		astronaut := NewAstronaut()
+		astronaut := Astronaut{}
 		answer := questionary.AstronautAnswer{
 			Tall: 165,
 			EyeSight: questionary.Select{
