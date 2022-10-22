@@ -4,7 +4,7 @@ before:
 builds:
   - id: job-survey
     binary: job-survey
-    main: ./cmd
+    main: ./cmd/job-survey
     env:
       - CGO_ENABLED=0
     goos:

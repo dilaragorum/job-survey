@@ -1,4 +1,4 @@
-package job_survey
+package cli
 
 import (
 	"encoding/json"
