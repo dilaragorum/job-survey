@@ -6,7 +6,7 @@ This is a very basic CLI tool which allows you to see whether you are suitable f
 
 ## Demo
 
-<a href="https://asciinema.org/a/530648" target="_blank"><img src="https://asciinema.org/a/530648.svg" /></a>
+<a href="https://asciinema.org/a/531177" target="_blank"><img src="https://asciinema.org/a/531177.svg" /></a>
 
 
 ## Installation
