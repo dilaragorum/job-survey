@@ -2,7 +2,7 @@
 
 This is a very basic CLI tool which allows you to see whether you are suitable for selected job.
 
-[For details please check my blog post]()
+[For details please check my blog post](https://medium.com/@dilaragorum/lets-build-a-basic-job-survey-cli-tool-with-go-using-the-strategy-pattern-17632ea52d2b)
 
 ## Demo
 
@@ -11,4 +11,6 @@ This is a very basic CLI tool which allows you to see whether you are suitable f
 
 ## Installation
 
-`go install github.com/dilaragorum/job-survey/cmd/job-survey@latest`
+```shell
+go install github.com/dilaragorum/job-survey@latest
+```
