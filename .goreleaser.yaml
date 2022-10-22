@@ -2,9 +2,10 @@ before:
   hooks:
     - go mod tidy
 builds:
-  - id: job-survey
+  -
+    id: job-survey
     binary: job-survey
-    main: ./cmd/job-survey
+    main: .
     env:
       - CGO_ENABLED=0
     goos:
