@@ -1,7 +1,9 @@
 package main
 
-import "github.com/dilaragorum/job-survey/cmd"
+import (
+	"github.com/dilaragorum/job-survey/cmd/job-survey"
+)
 
 func main() {
-	cmd.Execute()
+	job_survey.Execute()
 }

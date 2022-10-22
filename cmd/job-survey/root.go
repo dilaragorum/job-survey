@@ -1,4 +1,4 @@
-package cmd
+package job_survey
 
 import (
 	"encoding/json"
